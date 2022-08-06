@@ -88,7 +88,11 @@ def get_max_salary(path):
     int
         The maximum salary paid out of all job opportunities
     """
-    pass
+
+    return max([
+        int(job["max_salary"]) for job in read(path)
+        if job["max_salary"].isdecimal()
+    ])
 
 
 def get_min_salary(path):
