@@ -56,7 +56,7 @@ def get_unique_industries(path):
     """
     jobs = read(path)
     job_industries = {job["industry"] for job in jobs}
-    return [job_industry for job_industry in job_industries]
+    return filter(None, [job_industry for job_industry in job_industries])
 
 
 def filter_by_industry(jobs, industry):
